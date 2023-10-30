@@ -6,4 +6,4 @@ In the game Nim, we begin with some number of piles, each with some number of ob
 Run the following on a terminal inside the project's folder:
 `python3 play.py {number of training matches to play against itself} "{initial piles as Python's list representation}"`
 ## Example usage
-`python3 play.py 42 "[1,5,7,9]"                                                                                                                                                                                                                                                                                                                                      
+`python3 play.py 42 "[1,5,7,9]"`                                                                                                                                                                                                                                                                                                                                      

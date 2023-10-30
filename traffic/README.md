@@ -1,7 +1,5 @@
-#Basic neural network
+# Basic neural network
 This is the sixth project of the course. It implements a very simple neural network using **TensorFlow** to to classify road signs based on an image of those signs, making use of a labeled dataset and using **OpenCV** to process the data before inputting it to the neural network.
-
-
 ## Data Set
 The data set used in the course for this project can be downloaded from the following [link](https://cdn.cs50.net/ai/2020/x/projects/5/gtsrb.zip). Once downloaded, move the resulting *gtsrb* directory inside the *traffic* directory.
 ## Dependencies for this project

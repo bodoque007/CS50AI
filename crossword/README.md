@@ -6,14 +6,5 @@ To run the crossword player, write on a terminal inside the project's folder the
 replacing {structure} for the name of the txt file that indicates the structure of the puzzle, {words} with the txt file containing the words available for the algorithm and {output_file_name} for the name of the .png file you want the resulting solved crossword to be outputted.
 ## Usage example
 `python generate.py data/structure1.txt data/words1.txt output.png`
-## Output example
-██████████████
-███████M████R█
-█INTELLIGENCE█
-█N█████N████S█
-█F██LOGIC███O█
-█E█████M████L█
-█R███SEARCH█V█
-███████X████E█
-██████████████
+There will be an stylized output on the terminal of the resulting crossword, apart from the .png file created with the solved crossword.
                                                                                                                                                                                                                                                                                                                                        

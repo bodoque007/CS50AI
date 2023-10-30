@@ -1,7 +1,8 @@
-At first, I tried applying only one convolution layer and one pooling layer. After flattening the data, I used two hidden layers connected with a Dropout of 0.5 between each other and another Dropout between the second hidden layer and the output layer.
+#Basic neural network
+This is the sixth project of the course. It implements a very simple neural network using **TensorFlow** to to classify road signs based on an image of those signs, making use of a labeled dataset and using **OpenCV** to process the data before inputting it to the neural network.
 
-After this, I added one more convolution layer, but realized it was convenient for the second convolution layer to utilize more filters, as its inputs weren't direct image data but data that already went through a convolution stage, thus having more patterns to capture.
 
-I was using a ReLU activation function for the output layer, but after realizing my model's accuracy was rather low, I googled about which activation function was the best for the output layer and learned that the "softmax" function is better suitable for our case, as we are dealing with a multiclass classification problem (because we have several exclusive classifications into which we'll group our data).
-
-Finally, I realized that using only one hidden layer instead of two didn't hurt the model's accuracy, so I took the second hidden layer out.
+## Data Set
+The data set used in the course for this project can be downloaded from the following [link](https://cdn.cs50.net/ai/2020/x/projects/5/gtsrb.zip). Once downloaded, move the resulting *gtsrb* directory inside the *traffic* directory.
+## Dependencies for this project
+run pip3 install -r requirements.txt to install this project’s dependencies: opencv-python for image processing, scikit-learn for ML-related functions, and tensorflow for neural networks.

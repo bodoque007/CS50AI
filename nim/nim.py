@@ -234,7 +234,7 @@ def train(n):
     return player
 
 
-def play(ai, human_player=None):
+def play(ai, human_player=None, initial_game=[1, 3, 5, 7]):
     """
     Play human game against the AI.
     `human_player` can be set to 0 or 1 to specify whether
@@ -246,7 +246,7 @@ def play(ai, human_player=None):
         human_player = random.randint(0, 1)
 
     # Create new game
-    game = Nim()
+    game = Nim(initial_game)
 
     # Game loop
     while True:

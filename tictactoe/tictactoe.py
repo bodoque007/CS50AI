@@ -56,6 +56,7 @@ def result(board, action):
     Returns the board that results from making move (i, j) on the board.
     """
     if action not in actions(board):
+        print(action)
         raise Exception
     copy_board = copy.deepcopy(board)
     copy_board[action[0]][action[1]] = player(board)
@@ -106,27 +107,36 @@ def minimax(board):
     """
     Returns the optimal action for the current player on the board.
     """
-    if terminal(board):
-        return None
-    actions_and_values = {}
-    for action in actions(board):
-        actions_and_values[min_max(result(board, action))] = action
+    return mini_max(board, float('-inf'), float('inf'))[1]
 
-    if player(board) == X:
-        return actions_and_values[max(actions_and_values)]
-    else:
-        return actions_and_values[min(actions_and_values)]
-    
-def min_max(board):
+
+def mini_max(board, alpha, beta):
     if terminal(board):
-        return utility(board)
+        return utility(board), None
     
+    action = None
     if player(board) == X:
-        v = -100
-        for action in actions(board):
-            v = max(v, min_max(result(board, action)))
+        max_eval = float('-inf')
+        for act in actions(board):
+            new_board = result(board, act)
+            eval, _ = mini_max(new_board, alpha, beta)
+            if eval > max_eval:
+                max_eval = eval
+                action = act
+            alpha = max(alpha, eval)
+            if beta <= alpha:
+                break 
+        return max_eval, action
+    
     else:
-        v = 100
-        for action in actions(board):
-            v = min(v, min_max(result(board, action)))
-    return v
+        min_eval = float('inf')
+        for act in actions(board):
+            new_board = result(board, act)
+            eval, _ = mini_max(new_board, alpha, beta)
+            if eval < min_eval:
+                min_eval = eval
+                action = act
+            beta = min(beta, eval)
+            if beta <= alpha:
+                break 
+        return min_eval, action
